@@ -8,7 +8,7 @@ class City {
 	in a format that makes your search function accurate and time efficient.
     */
   constructor(data) {
-    this.data = data.sort(); // if data points are numeric, else would need to create a custom sort
+    this.data = data.sort((a, b) => a[0] - b[0]); // if data points are numeric, else would need to create a custom sort
   }
   /* @params: address-the user's entered dropoff address’s 12-digit-geohash
 	This method should search around “address” for the best curb spaces available. 
@@ -41,7 +41,7 @@ class City {
     geohashIndex === 'not a valid location'
       ? this.data.push(location)
       : (this.data[geohashIndex][1] = location[1]);
-    this.data.sort();
+    this.data.sort((a, b) => a[0] - b[0]);
   }
 
   /**
