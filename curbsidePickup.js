@@ -41,7 +41,7 @@ class City {
     geohashIndex === 'not a valid location'
       ? this.data.push(location)
       : (this.data[geohashIndex][1] = location[1]);
-    data.sort((a, b) => a[0] - b[0]);
+    this.data.sort((a, b) => a[0] - b[0]);
   }
 
   /**
